@@ -15,7 +15,9 @@ open class SimpleButton: SKSpriteNode {
         super.init(texture: nil, color: color, size: size)
         isUserInteractionEnabled = true
         let label = SKLabelNode(text: text)
-        label.fontSize = 14
+        label.fontSize = 24
+        label.fontColor = .black
+        label.position.y -= 6
         addChild(label)
     }
 
