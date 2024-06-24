@@ -1,11 +1,10 @@
 import SpriteKit
 
-class SeekingScene: SKScene {
+class SeekScene: SKScene {
 
     var lastUpdateTime: TimeInterval = 0
     var entityManager: EntityManager?
-
-    let moveEntity = MoveEntity()
+    let moveEntity = MoveEntity(color: .green, size: .init(width: 10, height: 10))
 
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -13,12 +12,33 @@ class SeekingScene: SKScene {
         anchorPoint = sceneAnchorPoint
         physicsWorld.gravity = .zero
 
+        addBackButton()
         entityManager = EntityManager(scene: self)
+        addMoveEntity()
+    }
 
+    private func addMoveEntity() {
         if let spriteComponent = moveEntity.component(ofType: SpriteComponent.self) {
             spriteComponent.node.position = .zero
+            spriteComponent.node.zPosition = 4
         }
         entityManager?.add(moveEntity)
+    }
+
+    private func seekToPosition(_ position: CGPoint?) {
+        guard let moveComponent = moveEntity.component(ofType: MoveComponent.self), let position else {
+            return
+        }
+        addTouchIndicatorNode(position)
+        moveComponent.seekToLocation(position)
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        seekToPosition(getPositionFromTouches(touches))
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        seekToPosition(getPositionFromTouches(touches))
     }
 
     override func update(_ currentTime: TimeInterval) {
@@ -28,16 +48,5 @@ class SeekingScene: SKScene {
         let delta = currentTime - lastUpdateTime
         lastUpdateTime = currentTime
         entityManager?.update(delta)
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        guard let touch = touches.first else {
-          return
-        }
-        let touchPosition = touch.location(in: self)
-        if let moveComponent = moveEntity.component(ofType: MoveComponent.self) {
-            moveComponent.seekToLocation(touchPosition)
-        }
     }
 }

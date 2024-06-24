@@ -6,8 +6,8 @@ final class SpriteComponent: GKComponent {
     let node: SKSpriteNode
     private(set) var shouldContinueActions = true
 
-    override init() {
-        node = SKSpriteNode(color: .red, size: .init(width: 5, height: 5))
+    init(color: SKColor, size: CGSize) {
+        node = SKSpriteNode(color: color, size: size)
         super.init()
     }
 

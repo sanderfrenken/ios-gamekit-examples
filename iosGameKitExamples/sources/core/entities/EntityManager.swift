@@ -7,8 +7,7 @@ final class EntityManager {
     var entities = Set<GKEntity>()
 
     lazy var componentSystems: [GKComponentSystem] = {
-        return [GKComponentSystem(componentClass: MoveComponent.self),
-                GKComponentSystem(componentClass: SpriteComponent.self)]
+        return [GKComponentSystem(componentClass: MoveComponent.self)]
     }()
 
     init(scene: SKScene) {

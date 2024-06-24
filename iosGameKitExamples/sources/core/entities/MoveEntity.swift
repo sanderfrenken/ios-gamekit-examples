@@ -2,9 +2,9 @@ import GameplayKit
 
 final class MoveEntity: GKEntity {
 
-    override init() {
+    init(color: SKColor, size: CGSize) {
         super.init()
-        addComponent(SpriteComponent())
+        addComponent(SpriteComponent(color: color, size: size))
         addComponent(MoveComponent())
     }
 

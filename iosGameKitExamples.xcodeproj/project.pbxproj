@@ -12,10 +12,13 @@
 		E00625CF2C289E4800CF2950 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E00625CE2C289E4800CF2950 /* Base */; };
 		E00625D12C289E4A00CF2950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E00625D02C289E4A00CF2950 /* Assets.xcassets */; };
 		E00625D42C289E4A00CF2950 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E00625D32C289E4A00CF2950 /* Base */; };
+		E0AEB5522C29F054004B2A6E /* SeekAndAvoidScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AEB5512C29F054004B2A6E /* SeekAndAvoidScene.swift */; };
+		E0AEB5542C29FA04004B2A6E /* WanderScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AEB5532C29FA04004B2A6E /* WanderScene.swift */; };
+		E0AEB5562C29FD8D004B2A6E /* MoveComponent+Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AEB5552C29FD8D004B2A6E /* MoveComponent+Behavior.swift */; };
 		E0B481042C289EE00062A849 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B481032C289EE00062A849 /* SimpleButton.swift */; };
 		E0B481082C289FD00062A849 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B481072C289FD00062A849 /* Constants.swift */; };
 		E0B4810E2C28A0910062A849 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B4810D2C28A0910062A849 /* MenuScene.swift */; };
-		E0B481102C28A1EF0062A849 /* SeekingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B4810F2C28A1EF0062A849 /* SeekingScene.swift */; };
+		E0B481102C28A1EF0062A849 /* SeekScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B4810F2C28A1EF0062A849 /* SeekScene.swift */; };
 		E0B481142C28A2EB0062A849 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B481132C28A2EB0062A849 /* MoveComponent.swift */; };
 		E0B481162C28A39D0062A849 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B481152C28A39D0062A849 /* SpriteComponent.swift */; };
 		E0B481182C28A4280062A849 /* MoveEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B481172C28A4280062A849 /* MoveEntity.swift */; };
@@ -30,10 +33,13 @@
 		E00625CE2C289E4800CF2950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E00625D02C289E4A00CF2950 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E00625D32C289E4A00CF2950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E0AEB5512C29F054004B2A6E /* SeekAndAvoidScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekAndAvoidScene.swift; sourceTree = "<group>"; };
+		E0AEB5532C29FA04004B2A6E /* WanderScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanderScene.swift; sourceTree = "<group>"; };
+		E0AEB5552C29FD8D004B2A6E /* MoveComponent+Behavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoveComponent+Behavior.swift"; sourceTree = "<group>"; };
 		E0B481032C289EE00062A849 /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 		E0B481072C289FD00062A849 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E0B4810D2C28A0910062A849 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
-		E0B4810F2C28A1EF0062A849 /* SeekingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekingScene.swift; sourceTree = "<group>"; };
+		E0B4810F2C28A1EF0062A849 /* SeekScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekScene.swift; sourceTree = "<group>"; };
 		E0B481132C28A2EB0062A849 /* MoveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
 		E0B481152C28A39D0062A849 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		E0B481172C28A4280062A849 /* MoveEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveEntity.swift; sourceTree = "<group>"; };
@@ -77,6 +83,25 @@
 			path = iosGameKitExamples;
 			sourceTree = "<group>";
 		};
+		E0AEB54F2C29ED6C004B2A6E /* components */ = {
+			isa = PBXGroup;
+			children = (
+				E0B481132C28A2EB0062A849 /* MoveComponent.swift */,
+				E0AEB5552C29FD8D004B2A6E /* MoveComponent+Behavior.swift */,
+				E0B481152C28A39D0062A849 /* SpriteComponent.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		E0AEB5502C29ED73004B2A6E /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				E0B481192C28A4940062A849 /* EntityManager.swift */,
+				E0B481172C28A4280062A849 /* MoveEntity.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
 		E0B481022C289ED40062A849 /* ui */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,11 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				E0B481072C289FD00062A849 /* Constants.swift */,
-				E0B481192C28A4940062A849 /* EntityManager.swift */,
 				E0B4811D2C28B46D0062A849 /* Extensions.swift */,
-				E0B481132C28A2EB0062A849 /* MoveComponent.swift */,
-				E0B481172C28A4280062A849 /* MoveEntity.swift */,
-				E0B481152C28A39D0062A849 /* SpriteComponent.swift */,
+				E0AEB5502C29ED73004B2A6E /* entities */,
+				E0AEB54F2C29ED6C004B2A6E /* components */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -112,7 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				E0B4810D2C28A0910062A849 /* MenuScene.swift */,
-				E0B4810F2C28A1EF0062A849 /* SeekingScene.swift */,
+				E0B4810F2C28A1EF0062A849 /* SeekScene.swift */,
+				E0AEB5512C29F054004B2A6E /* SeekAndAvoidScene.swift */,
+				E0AEB5532C29FA04004B2A6E /* WanderScene.swift */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -208,14 +233,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0B481102C28A1EF0062A849 /* SeekingScene.swift in Sources */,
+				E0B481102C28A1EF0062A849 /* SeekScene.swift in Sources */,
 				E0B481082C289FD00062A849 /* Constants.swift in Sources */,
 				E0B4811A2C28A4940062A849 /* EntityManager.swift in Sources */,
 				E00625CC2C289E4800CF2950 /* GameViewController.swift in Sources */,
+				E0AEB5562C29FD8D004B2A6E /* MoveComponent+Behavior.swift in Sources */,
 				E0B481142C28A2EB0062A849 /* MoveComponent.swift in Sources */,
+				E0AEB5542C29FA04004B2A6E /* WanderScene.swift in Sources */,
 				E0B481162C28A39D0062A849 /* SpriteComponent.swift in Sources */,
 				E0B4811E2C28B46D0062A849 /* Extensions.swift in Sources */,
 				E0B4810E2C28A0910062A849 /* MenuScene.swift in Sources */,
+				E0AEB5522C29F054004B2A6E /* SeekAndAvoidScene.swift in Sources */,
 				E00625C42C289E4800CF2950 /* AppDelegate.swift in Sources */,
 				E0B481182C28A4280062A849 /* MoveEntity.swift in Sources */,
 				E0B481042C289EE00062A849 /* SimpleButton.swift in Sources */,
