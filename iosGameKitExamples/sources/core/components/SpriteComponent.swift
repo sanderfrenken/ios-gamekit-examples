@@ -1,6 +1,7 @@
 import SpriteKit
 import GameplayKit
 
+@MainActor
 final class SpriteComponent: GKComponent {
 
     let node: SKSpriteNode
@@ -13,5 +14,13 @@ final class SpriteComponent: GKComponent {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError()
+    }
+
+    override func update(deltaTime seconds: TimeInterval) {
+        let nodeToUse = node
+        Task {
+            let size = await nodeToUse.size
+            print("size: \(size)")
+        }
     }
 }

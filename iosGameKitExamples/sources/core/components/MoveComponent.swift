@@ -1,7 +1,7 @@
 import GameplayKit
 import SpriteKit
 
-final class MoveComponent: GKAgent2D, GKAgentDelegate {
+final class MoveComponent: GKAgent2D, @preconcurrency GKAgentDelegate {
 
     override init() {
         super.init()
@@ -20,6 +20,7 @@ final class MoveComponent: GKAgent2D, GKAgentDelegate {
         super.update(deltaTime: seconds)
     }
 
+    @MainActor
     func agentWillUpdate(_ agent: GKAgent) {
         guard let spriteComponent = entity?.component(ofType: SpriteComponent.self) else {
             return
@@ -31,6 +32,7 @@ final class MoveComponent: GKAgent2D, GKAgentDelegate {
         agent2d.position = .init(spriteComponent.node.position)
     }
 
+    @MainActor
     func agentDidUpdate(_ agent: GKAgent) {
         guard let spriteComponent = entity?.component(ofType: SpriteComponent.self) else {
             return
