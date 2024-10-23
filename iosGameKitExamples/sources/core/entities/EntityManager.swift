@@ -1,6 +1,7 @@
 import SpriteKit
 import GameplayKit
 
+@MainActor
 final class EntityManager {
 
     let scene: SKScene

@@ -1,5 +1,6 @@
 import GameplayKit
 
+@MainActor
 final class MoveEntity: GKEntity {
 
     init(color: SKColor, size: CGSize) {
