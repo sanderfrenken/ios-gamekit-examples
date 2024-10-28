@@ -1,7 +1,8 @@
 import GameplayKit
 import SpriteKit
 
-final class MoveComponent: GKAgent2D, GKAgentDelegate {
+@MainActor
+final class MoveComponent: GKAgent2D, @preconcurrency GKAgentDelegate {
 
     override init() {
         super.init()
